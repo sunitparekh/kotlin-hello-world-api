@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	application
 	id("org.springframework.boot") version "2.2.0.BUILD-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.0.7.RELEASE"
 	kotlin("jvm") version "1.3.31"
@@ -16,6 +17,10 @@ configurations {
 	runtimeClasspath {
 		extendsFrom(developmentOnly)
 	}
+}
+
+application {
+	mainClassName = "com.tw.learn.kotlin.movieservice.MovieServiceApplicationKt"
 }
 
 repositories {

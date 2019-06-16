@@ -14,6 +14,7 @@ class HelloWorldControllerTests(@Autowired val restTemplate: TestRestTemplate) {
 	@Test
 	fun `should greet when hello api is invoked`() {
 		val result = restTemplate.getForEntity<Map<String,Any>>("/hello")
+
 		result.statusCode shouldBe HttpStatus.OK
 		result.body?.get("greeting") shouldBe "Hello World !!!"
 	}
